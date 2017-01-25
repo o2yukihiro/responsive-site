@@ -68,6 +68,12 @@ a {
   background-size: cover;
   background-position: center center;
 }
+// モバイル
+@media (max-width: 768px) {
+  .header-img {
+    height: 250px;
+  }
+}
 /* Contents
 ------------------------------------------------------------*/
 // Common Styles
