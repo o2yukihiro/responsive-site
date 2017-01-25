@@ -97,8 +97,7 @@ section {
   #kinds .container {
     -webkit-flex-direction: column;
     flex-direction: column; }
-
-  .box {
+  #kinds .box {
     margin: 10px 0px; } }
 /* Footer
 ------------------------------------------------------------*/
@@ -123,5 +122,9 @@ footer {
     font-size: 1rem; }
     footer .text-center .button-readmore:hover {
       background-color: #8b7700; }
+
+@media (min-width: 1025px) {
+  footer .text-center .button-readmore:hover {
+    background-color: #8b7700; } }
 
 /*# sourceMappingURL=style.css.map */

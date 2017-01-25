@@ -118,9 +118,9 @@ section {
       .container {
         @include flex-direction(column);
       }
-   }
      .box {
     margin: 10px 0px;
+     }
   }
 }
 /* Footer
@@ -151,4 +151,16 @@ footer {
           }
        }
     }
+}
+// PC
+@media (min-width: 1025px) {
+  footer {
+    .text-center{
+      .button-readmore {
+      &:hover {
+            background-color: darken($subColor, 10%);  
+          }
+      }
+    }
+  }
 }
