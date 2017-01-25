@@ -1,0 +1,154 @@
+@import "compass";
+@import url(https://fonts.googleapis.com/css?family=Abel);
+// font-family
+$baseFontFamily :"游ゴシック", YuGothic, "メイリオ",Verdana, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+
+// colors
+$baseColor: #fdfcf6;
+$subColor: #bea300;
+$keyColor: #bf794e;
+$fontColor: #4c4c4c;
+
+// desktop
+/* Base
+------------------------------------------------------------*/
+html{ font-size: 62.5%; }
+
+body{
+  color: $fontColor;
+  font-size: 1.4rem;
+  font-family:$baseFontFamily;
+  line-height:1.6;
+  letter-spacing: 0.1em; 
+  background-color: $baseColor;
+}
+
+a {
+  @include link-colors($keyColor, darken($keyColor, 10%), lighten($keyColor, 5%), darken($keyColor, 10%));
+  text-decoration: none;
+}
+
+/* Align
+------------------------------------------------------------*/
+.text-center {
+  text-align: center;
+}
+
+/* Layout
+------------------------------------------------------------*/
+.block-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Font
+------------------------------------------------------------*/
+.abel {
+  font-family: 'Abel', sans-serif;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
+ /* Base
+------------------------------------------------------------*/
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+/* Header
+------------------------------------------------------------*/
+.header-img {
+  background-image: url("./images/image_top.jpg");
+  height: 500px;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+/* Contents
+------------------------------------------------------------*/
+// Common Styles
+section {
+  padding: 60px 0;
+  .container {
+    width: 90%;
+    @extend .block-center;
+  }
+  h2 {
+    @extend .abel;
+    font-size: 3.2rem;
+    @extend .uppercase;
+  }
+}
+
+// Kinds
+#kinds {
+  background-color: $baseColor;
+  .container {
+    @include display-flex;
+    justify-content: space-between;
+  }
+  h2 {
+    color: $subColor; 
+    margin-bottom: 60px;
+  } 
+  .box {
+    @include flex(1);
+    margin: 0px 10px;
+    padding: 30px;
+    background-color: $keyColor;
+    @include border-radius(4px);
+    @include box-sizing(border-box);
+  }
+  h3 {
+    @extend .abel;
+    @extend .uppercase;
+    color: $subColor;
+    margin-bottom:10px;
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
+}
+// モバイル
+@media (max-width: 768px) {
+  #kinds {
+      .container {
+        @include flex-direction(column);
+      }
+   }
+     .box {
+    margin: 10px 0px;
+  }
+}
+/* Footer
+------------------------------------------------------------*/
+footer {
+    background-color: $keyColor;
+      padding: 15px 0;
+    .text-center{
+       h2 {
+       color: $subColor; 
+       margin: 5px 0;
+       }
+       .button-readmore {
+          margin: auto;
+          text-align: center;
+          padding: 5px 0;
+          width: 180px;
+          display: block;
+          color: #FFF;
+          font-weight: bold;
+          background-color: $subColor;
+          @extend .abel;
+          @extend .uppercase;
+          @include border-radius(4px);
+          font-size: 1rem;
+          &:hover {
+            background-color: darken($subColor, 10%);  
+          }
+       }
+    }
+}
